@@ -6,28 +6,19 @@ use Illuminate\Support\Facades\Auth;
 
 class CustomAuthTest extends TestCase
 {
+    protected $user;
+
     public function setUp()
     {
         parent::setUp();
 
-        $salt = hash(
-          'sha512',
-          substr(
-            str_shuffle(
-              str_repeat('0123456789abcdefghijklmnopqrstuvwxyz',5)
-            ),
-            0,
-            5
-          ).mt_rand(1,999999)*memory_get_usage(true)
-        );
-        $password = hash('sha512', "1234567890" . $salt);
-
-        $this->user = User::create([
-            'email' => 'aaronmichaelmusic@gmail.com',
-            'name' => 'Aaron kaz',
-            'salt' => $salt,
-            'password' => $password
-        ]);
+        if (! $this->user) {
+            $this->user = User::create([
+                'email' => 'aaronmichaelmusic@gmail.com',
+                'name' => 'Aaron kaz',
+                'password' => "1234567890"
+            ]);
+        }
     }
 
     public function testCustomAuthUserProvider()

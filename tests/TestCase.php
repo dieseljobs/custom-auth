@@ -76,6 +76,8 @@ class TestCase extends BaseTestCase
                 $table->string('name');
                 $table->string('password');
                 $table->string('salt');
+                $table->string('verified');
+                $table->string('ip');
             });
         }
     }
