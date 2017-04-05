@@ -23,4 +23,19 @@ class User extends CustomAuthUserModel implements AuthenticatableContract,
         'name',
         'password'
     ];
+
+    public function sendVerificationEmail()
+    {
+        //
+    }
+
+    public function sendNewEmailVerificationEmail()
+    {
+        //
+    }
+
+    public function notifyPasswordChange()
+    {
+        //
+    }
 }
