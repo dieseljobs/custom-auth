@@ -84,7 +84,7 @@ class CustomAuthUserModel extends Model
                 ! $model->is_verified and
                 method_exists($model, 'sendVerificationEmail')
             ) {
-                $model->sendVerificationEmail();
+                //$model->sendVerificationEmail();
             }
             // send email verification if newemail added
             if (
