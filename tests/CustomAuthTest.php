@@ -33,7 +33,7 @@ class CustomAuthTest extends TestCase
 
     public function testCustomAuthAdminUser()
     {
-        session()->put('adminid', $this->user->id);
+        Auth::adminOnceUsingId($this->user->id);
 
         $this->assertEquals($this->user->id, Auth::adminUser()->id);
     }

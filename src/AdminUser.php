@@ -35,7 +35,7 @@ trait AdminUser
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @return void
      */
-    public function setAdminUser(UserContract $user)
+    public function setAdminUser($user)
     {
         $this->adminUser = $user;
     }
